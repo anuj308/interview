@@ -48,4 +48,4 @@ const practiceSessionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const PracticeSession = mongoose.model('PracticeSession', practiceSessionSchema);
+export const PracticeSession = mongoose.models.PracticeSession || mongoose.model('PracticeSession', practiceSessionSchema);

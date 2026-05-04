@@ -13,13 +13,13 @@ export default function Home() {
       <div className='mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8'>
         <div className='text-center'>
           <h1 className='text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
-            Master Your Next.js &
+            Master Behavioral,
             <br />
-            <span className='text-blue-600'>Express Interviews</span>
+            <span className='text-blue-600'>Situational & CV Interviews</span>
           </h1>
           <p className='mt-6 text-lg text-gray-600 max-w-2xl mx-auto'>
-            Learn proven answer frameworks, practice with real questions, and get instant AI-powered
-            feedback to land your dream tech job.
+            Learn STAR and CAP answer frameworks, practice real behavioral and situational questions,
+            and get instant AI-powered feedback for CV-based interview prep.
           </p>
 
           <div className='mt-10 flex flex-col sm:flex-row gap-4 justify-center'>

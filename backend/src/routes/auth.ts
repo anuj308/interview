@@ -2,6 +2,7 @@ import { Router, Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import { User } from '../models/User.js';
 import { generateToken } from '../lib/jwt.js';
+import { authMiddleware } from '../middleware/auth.js';
 
 const router = Router();
 
@@ -74,7 +75,7 @@ router.post('/login', async (req: Request, res: Response) => {
 });
 
 // Get current user
-router.get('/me', async (req: Request, res: Response) => {
+router.get('/me', authMiddleware, async (req: Request, res: Response) => {
   try {
     const userId = (req as any).userId;
     const user = await User.findById(userId).select('-password');
