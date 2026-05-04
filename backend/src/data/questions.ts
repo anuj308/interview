@@ -125,4 +125,13 @@ export const questionSeedData = [
     difficulty: 'hard',
     tags: ['project-management', 'communication', 'negotiation'],
   },
+  {
+    category: 'cv',
+    subCategory: 'unix-linux',
+    text: 'Explain what the Unix `man` command does and provide examples of how you would use it.',
+    sampleAnswer:
+      'The `man` command displays the manual pages for Unix/Linux commands. For example, `man ls` shows documentation for the ls command, `man grep` for grep, and `man man` for the man command itself. You can search within man pages using `/` and navigate with arrow keys. `man -k keyword` searches for commands related to a topic.',
+    difficulty: 'easy',
+    tags: ['unix', 'linux', 'command-line', 'troubleshooting'],
+  },
 ] as const;
