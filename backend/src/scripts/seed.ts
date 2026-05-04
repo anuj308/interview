@@ -7,6 +7,9 @@ import { questionSeedData } from '../data/questions.js';
 async function seed() {
   try {
     console.log('Starting database seed...');
+    
+    // Connect to database
+    await connectDB();
 
     // Clear existing questions
     await Question.deleteMany({});
