@@ -8,7 +8,7 @@ A Node.js/Express backend for the Interview Practice platform with AI-powered fe
 - MongoDB for data persistence
 - Questions bank with filtering
 - Practice session tracking
-- AI-powered feedback using OpenAI
+- AI-powered feedback using Google Gemini or OpenAI
 - RESTful API
 
 ## Setup
@@ -17,7 +17,7 @@ A Node.js/Express backend for the Interview Practice platform with AI-powered fe
 
 - Node.js 18+
 - MongoDB (local or cloud)
-- OpenAI API key
+- Google Gemini API key or OpenAI API key
 
 ### Installation
 
@@ -38,6 +38,8 @@ cp .env.example .env.local
 ```
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
+GOOGLE_API_KEY=your_google_key
+GOOGLE_MODEL=gemini-1.5-flash
 OPENAI_API_KEY=your_openai_key
 PORT=5000
 NODE_ENV=development
