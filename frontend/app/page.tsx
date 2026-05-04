@@ -8,7 +8,7 @@ export default function Home() {
   const { isAuthenticated } = useAuth();
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100'>
+    <div className='min-h-screen bg-linear-to-br from-blue-50 to-indigo-100'>
       {/* Hero Section */}
       <div className='mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8'>
         <div className='text-center'>

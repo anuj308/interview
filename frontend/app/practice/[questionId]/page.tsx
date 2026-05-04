@@ -1,15 +1,20 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import * as api from '@/lib/api';
 import { Question, PracticeSession, Feedback } from '@/types';
-import { AnswerRecorder } from '@/components/AnswerRecorder';
 import { FeedbackCard } from '@/components/FeedbackCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+
+const AnswerRecorder = dynamic(
+  () => import('@/components/AnswerRecorder').then((mod) => mod.AnswerRecorder),
+  { ssr: false }
+);
 
 export default function PracticePage() {
   const router = useRouter();

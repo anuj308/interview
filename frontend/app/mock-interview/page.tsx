@@ -1,16 +1,21 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import * as api from '@/lib/api';
 import { Question } from '@/types';
-import { AnswerRecorder } from '@/components/AnswerRecorder';
 import { FeedbackCard } from '@/components/FeedbackCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
+
+const AnswerRecorder = dynamic(
+  () => import('@/components/AnswerRecorder').then((mod) => mod.AnswerRecorder),
+  { ssr: false }
+);
 
 type InterviewMode = 'setup' | 'interview' | 'complete';
 
@@ -209,7 +214,7 @@ export default function MockInterviewPage() {
               <div className='space-y-3'>
                 {questions.map((q, idx) => (
                   <div key={idx} className='flex items-start gap-2 pb-3 border-b border-gray-200 last:border-0'>
-                    <span className='font-semibold text-gray-700 min-w-[40px]'>Q{idx + 1}:</span>
+                    <span className='font-semibold text-gray-700 min-w-10'>Q{idx + 1}:</span>
                     <span className='text-gray-600 flex-1'>{q.question.text}</span>
                   </div>
                 ))}

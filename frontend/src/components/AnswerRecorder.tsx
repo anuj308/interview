@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useMediaRecorder } from 'react-media-recorder';
+import { useReactMediaRecorder } from 'react-media-recorder';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -18,7 +18,7 @@ export function AnswerRecorder({ onSubmit, isLoading = false }: AnswerRecorderPr
   const [textAnswer, setTextAnswer] = useState('');
   const [isRecording, setIsRecording] = useState(false);
 
-  const { status, startRecording, stopRecording, mediaBlobUrl } = useMediaRecorder({
+  const { status, startRecording, stopRecording, mediaBlobUrl } = useReactMediaRecorder({
     audio: true,
   });
 
@@ -78,7 +78,7 @@ export function AnswerRecorder({ onSubmit, isLoading = false }: AnswerRecorderPr
               value={textAnswer}
               onChange={(e) => setTextAnswer(e.target.value)}
               placeholder='Type your answer here...'
-              className='min-h-[150px]'
+              className='min-h-37.5'
             />
             <Button
               onClick={handleSubmitType}
