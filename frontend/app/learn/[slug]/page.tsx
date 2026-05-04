@@ -179,6 +179,92 @@ const articles: Record<string, { title: string; content: React.ReactNode }> = {
       </>
     ),
   },
+  'behavioral-tips': {
+    title: 'Behavioral Interview Tips',
+    content: (
+      <>
+        <div className='space-y-6'>
+          <section>
+            <h2 className='text-2xl font-bold text-gray-900 mb-3'>How to approach behavioral questions</h2>
+            <p className='text-gray-700 leading-relaxed'>
+              Behavioral interviews are about demonstrating how you work with others, solve problems, and handle
+              pressure. Use real examples, keep your answer structured, and focus on outcomes.
+            </p>
+          </section>
+
+          <section className='bg-blue-50 p-6 rounded-lg'>
+            <div className='space-y-3'>
+              <div>
+                <h3 className='font-bold text-blue-900 mb-1'>1. Pick a relevant story</h3>
+                <p className='text-blue-800'>Choose a story that shows teamwork, ownership, conflict resolution, or growth.</p>
+              </div>
+              <div>
+                <h3 className='font-bold text-blue-900 mb-1'>2. Lead with the result</h3>
+                <p className='text-blue-800'>Be clear about the outcome, then explain how your actions contributed to it.</p>
+              </div>
+              <div>
+                <h3 className='font-bold text-blue-900 mb-1'>3. Keep it concise</h3>
+                <p className='text-blue-800'>Aim for a focused answer that stays under two minutes unless asked for more detail.</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className='text-2xl font-bold text-gray-900 mb-3'>Common mistakes to avoid</h2>
+            <ul className='space-y-2 text-gray-700'>
+              <li>• Giving vague answers without a concrete example</li>
+              <li>• Spending too long on setup and not enough on actions and result</li>
+              <li>• Blaming others instead of showing ownership</li>
+              <li>• Forgetting to mention what you learned</li>
+            </ul>
+          </section>
+        </div>
+      </>
+    ),
+  },
+  'technical-communication': {
+    title: 'Technical Communication',
+    content: (
+      <>
+        <div className='space-y-6'>
+          <section>
+            <h2 className='text-2xl font-bold text-gray-900 mb-3'>Explain technical work clearly</h2>
+            <p className='text-gray-700 leading-relaxed'>
+              For CV-based technical questions, show both depth and clarity. Explain what you built, why you made those
+              choices, and what the trade-offs were.
+            </p>
+          </section>
+
+          <section className='bg-blue-50 p-6 rounded-lg'>
+            <div className='space-y-3'>
+              <div>
+                <h3 className='font-bold text-blue-900 mb-1'>Context</h3>
+                <p className='text-blue-800'>Start with the project, the problem, and your role in it.</p>
+              </div>
+              <div>
+                <h3 className='font-bold text-blue-900 mb-1'>Choices</h3>
+                <p className='text-blue-800'>Explain the architecture, libraries, or design decisions you made.</p>
+              </div>
+              <div>
+                <h3 className='font-bold text-blue-900 mb-1'>Impact</h3>
+                <p className='text-blue-800'>Finish with the measurable outcome or what improved because of your work.</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className='text-2xl font-bold text-gray-900 mb-3'>Tips for technical questions</h2>
+            <ul className='space-y-2 text-gray-700'>
+              <li>• Use simple language before adding technical detail</li>
+              <li>• Mention trade-offs instead of only describing implementation</li>
+              <li>• Tie the story back to business or user impact</li>
+              <li>• Be ready to go deeper if the interviewer asks follow-up questions</li>
+            </ul>
+          </section>
+        </div>
+      </>
+    ),
+  },
 };
 
 export default function LearnArticlePage() {

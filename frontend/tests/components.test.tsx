@@ -4,6 +4,7 @@ import { Navbar } from '@/components/Navbar';
 import { QuestionCard } from '@/components/QuestionCard';
 import { FeedbackCard } from '@/components/FeedbackCard';
 import { AnswerRecorder } from '@/components/AnswerRecorder';
+import { ThemeProvider } from '@/contexts/ThemeContext';
 
 const useAuthMock = vi.hoisted(() => vi.fn());
 
@@ -50,11 +51,35 @@ describe('shared components', () => {
       logout: vi.fn(),
     });
 
-    render(<Navbar />);
+    render(
+      <ThemeProvider>
+        <Navbar />
+      </ThemeProvider>
+    );
 
     expect(screen.getByText('Login')).toBeInTheDocument();
     expect(screen.getByText('Sign Up')).toBeInTheDocument();
     expect(screen.queryByText('Dashboard')).not.toBeInTheDocument();
+  });
+
+  it('toggles dark and light mode', () => {
+    useAuthMock.mockReturnValue({
+      user: null,
+      isAuthenticated: false,
+      logout: vi.fn(),
+    });
+
+    render(
+      <ThemeProvider>
+        <Navbar />
+      </ThemeProvider>
+    );
+
+    const themeButton = screen.getByRole('button', { name: /switch to dark mode/i });
+    fireEvent.click(themeButton);
+
+    expect(document.documentElement.classList.contains('dark')).toBe(true);
+    expect(screen.getByRole('button', { name: /switch to light mode/i })).toBeInTheDocument();
   });
 
   it('logs out and routes home', () => {
@@ -65,7 +90,11 @@ describe('shared components', () => {
       logout,
     });
 
-    render(<Navbar />);
+    render(
+      <ThemeProvider>
+        <Navbar />
+      </ThemeProvider>
+    );
     fireEvent.click(screen.getByRole('button', { name: /logout/i }));
 
     expect(logout).toHaveBeenCalledTimes(1);

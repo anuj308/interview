@@ -3,6 +3,8 @@ import cors from 'cors';
 import 'dotenv/config';
 import { connectDB } from './lib/db.js';
 import { errorHandler, authMiddleware } from './middleware/auth.js';
+import { Question } from './models/Question.js';
+import { questionSeedData } from './data/questions.js';
 
 import authRoutes from './routes/auth.js';
 import questionsRoutes from './routes/questions.js';
@@ -20,6 +22,11 @@ app.use(express.json());
 
 // Connect to database
 await connectDB();
+
+if ((await Question.countDocuments()) === 0) {
+  await Question.insertMany(questionSeedData);
+  console.log(`Seeded ${questionSeedData.length} questions`);
+}
 
 // Routes
 app.use('/api/auth', authRoutes);

@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -17,6 +18,65 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+:root.dark {
+  --background: #020617;
+  --foreground: #e2e8f0;
+  color-scheme: dark;
+}
+
+:root.dark .bg-white,
+:root.dark .bg-white\/90 {
+  background-color: #0f172a !important;
+}
+
+:root.dark .bg-gray-50,
+:root.dark .hover\:bg-gray-50:hover {
+  background-color: #111827 !important;
+}
+
+:root.dark .bg-gray-100,
+:root.dark .hover\:bg-gray-100:hover {
+  background-color: #1f2937 !important;
+}
+
+:root.dark .bg-blue-50 {
+  background-color: #0f172a !important;
+}
+
+:root.dark .bg-green-50 {
+  background-color: #06281f !important;
+}
+
+:root.dark .bg-red-50 {
+  background-color: #2a1111 !important;
+}
+
+:root.dark .bg-yellow-50 {
+  background-color: #2a2105 !important;
+}
+
+:root.dark .border-gray-200,
+:root.dark .border-gray-300 {
+  border-color: #334155 !important;
+}
+
+:root.dark .text-gray-900 {
+  color: #f8fafc !important;
+}
+
+:root.dark .text-gray-800 {
+  color: #e2e8f0 !important;
+}
+
+:root.dark .text-gray-700 {
+  color: #cbd5e1 !important;
+}
+
+:root.dark .text-gray-600,
+:root.dark .text-gray-500 {
+  color: #94a3b8 !important;
 }
 
 body {

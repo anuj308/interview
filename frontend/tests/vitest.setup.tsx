@@ -53,6 +53,20 @@ Object.defineProperty(globalThis, 'localStorage', {
   configurable: true,
 });
 
+Object.defineProperty(globalThis, 'matchMedia', {
+  value: (query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  }),
+  configurable: true,
+});
+
 vi.mock('next/link', () => ({
   default: ({ href, children, ...props }: any) => (
     <a href={typeof href === 'string' ? href : href?.pathname ?? '#'} {...props}>
